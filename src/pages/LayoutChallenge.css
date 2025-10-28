@@ -18,13 +18,14 @@
   /* DELETED: No more absolute positioning*/
   /* position: absolute;
   left: 50%;
-  top: 0;
   width: 45%;
+  top: 0;
   z-index: 2;
   margin-top: 20px; */
 }
 
 .messy-layout > div:last-child {
+  max-width: 40%;
   /* DELETED: No more absolute positioning*/
   /* position: absolute;
   left: 10%;
@@ -44,7 +45,7 @@
 
 @media (max-width: 768px) {
   .messy-layout {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .messy-layout > div:first-child {
     /* left: 70%;
@@ -52,7 +53,6 @@
   }
 
   .messy-layout > div:last-child {
-    /* left: 5%;
-    width: 90%; */
+    max-width: 100%;
   }
 }

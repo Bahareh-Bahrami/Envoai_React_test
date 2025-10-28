@@ -85,9 +85,23 @@
 .entries-table th,
 .entries-table td {
   /* NEW: Allow text wrapping and ellipsis for overflow */
-  overflow-wrap: break-word;
+  width: 100%;
   padding: 0.75rem 0.5rem;
-  text-align: left;
+  text-align: center;
+}
+
+.clamped-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+}
+
+.action-header,
+.action-body {
+  width: 5rem;
 }
 
 .delete-btn {
@@ -100,12 +114,23 @@
   background: #c82333;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
+  /* NEW: Prevent form from sticking to the left side by switching to a single-column grid */
   .entry-form {
     grid-template-columns: 1fr;
   }
 
   .entry-form button {
     grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .entries-table-container {
+    max-width: 100vw;
+    overflow: auto;
+  }
+  .entries-table {
+    width: 700px;
   }
 }
